@@ -1,0 +1,123 @@
+<!--
+1. Создать форму регистрации участников конференции: (10 баллов)
+<<<<<<< HEAD
+   Имя (должны быть указаны полностью фамилия, имя и отчество), 
+   контактный телефон,адрес электронной почты, 
+   список с секциями конференции (математика, физика, информатика)
+   дата рождения, доклад (переключатель), 
+   если есть доклад – то отображается поле для ввода темы. 
+2. Добавьте валидацию формы. (20 баллов)
+   все поля, кроме даты рождения, обязательны для заполнения;
+   поля имя, фамилия, отчество содержат только буквы русского алфавита;
+   поле телефон содержит только цифры, длина 11 символов, первые два символа +7
+   корректность адреса электронной почты;
+3. Оформление формы регистрации. (20 баллов)
+4. После заполнения всех полей и нажатия на кнопку "отправить" формируется страница, 
+   содержащая все ответы пользователя.(20 баллов + 20 баллов за оформление)
+5. Данные из формы сохранить в БД. (20 баллов)
+6. Выведите список зарегистрированных участников в виде таблицы.
+   (20 баллов + 20 баллов за оформление). 
+   Имя (должны быть указаны полностью фамилия, имя и отчество), 
+   контактный телефон, адрес электронной почты, 
+   список с секциями конференции (математика, физика, информатика),
+   дата рождения, доклад (переключатель),
+   если есть доклад – то отображается поле для ввода темы. 
+2. Добавьте валидацию формы. (20 баллов) все поля, кроме даты рождения, 
+   обязательны для заполнения; поля имя, фамилия, отчество содержат только 
+   буквы русского алфавита;
+   поле телефон содержит только цифры, длина 11 символов, первые два символа +7
+   корректность адреса электронной почты;
+3. Оформление формы регистрации. (20 баллов)
+4. После заполнения всех полей и нажатия на кнопку "отправить" формируется страница, 
+   содержащая все ответы пользователя.(20 баллов + 20 баллов за оформление)
+5. Данные из формы сохранить в БД. (20 баллов)
+6. Выведите список зарегистрированных участников в виде таблицы.
+   (20 баллов + 20 баллов за оформление)
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">   
+	<link rel="stylesheet" href="style.css"> 
+	<script src="jquery.js" type="text/javascript"></script>
+	<script src="jquery.maskedinput.js" type="text/javascript"></script>	
+	<script src="script.js"></script> 
+			
+    <title>Регистрация на конференцию</title>
+    		
+</head>
+<body>
+	<form class="reg_form">
+		<h1>Регистрация</h1>
+		<div class="line">
+			<input type="text" name="user_name" placeholder="Имя" required 
+			pattern="[А-Я][а-я]+"/>
+		</div>
+
+		<div class="line">
+			<input type="text" name="surname" placeholder="Фамилия" required 
+			pattern="[А-Я][а-я]+"/>
+		</div>
+
+		<div class="line">
+			<input type="text" name="father_name" placeholder="Отчество" required 
+			pattern="[А-Я][а-я]+"/>
+		</div>
+
+		<div class="line">
+			<label for="birthLabel">Дата рождения</label >
+			<input type="date" name="birth_date" placeholder="Дата рождения" required 
+			pattern="[0-9]{2}\.[0-9]{2}\.[0-9]{4}"/>
+		</div>
+
+		<div class="line">	
+			<input type="email" name="email" placeholder="user@email.ru" required />
+			<small>Адрес электронной почты</small>
+		</div>
+
+		<div class="line">
+			<input type="text" id= "phone" placeholder="Контактный номер" required/>			
+		</div>
+
+		<div class="line">
+			<h2>Секция:</h2>
+			<div class="line">
+				<input type="radio" name="section" value="maths" id="section_0" checked />	
+				<label for="section_0">Математика</label>
+			</div>
+
+			<div class="line">
+				<input type="radio" name="section" value="physics" id="section_1" />	
+				<label for="section_0">Физика</label>
+			</div>
+			
+			<div class="line">
+				<input type="radio" name="section" value="informatics" id="section_2" />	
+				<label for="section_0">Информатика</label>
+			</div>
+		</div>
+
+		<div class="line">
+			<h2>Доклад:</h2>
+			<div class="line">
+				<input type="radio" name="report" value="no" id="report_0" checked />	
+				<label for="report_0">Нет</label>
+			</div>
+			<div class="line">
+				<input type="radio" name="report" value="yes" id="report_1" />	
+				<label for="report_1">Да</label>
+			</div>
+		</div>
+				
+		<div class="line report_line" style="display: none;">
+			<input type="text" name="report_name" placeholder="Название доклада"  required disabled/>
+		</div>
+		<div class="line">
+			<input type="submit" value="Зарегистрироваться" />
+		</div>
+        </form>
+		
+</body>
+</html>
