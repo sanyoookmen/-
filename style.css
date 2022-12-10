@@ -1,0 +1,14 @@
+
+body{
+    background-color: lightgray;
+}
+.line {
+    margin-bottom: 20px;
+}
+.reg_form{
+	width: 500px;
+	margin: 0 auto;
+}
+input[type = 'text'], input[type = 'email'], input[type = 'tel'] {
+	width: 100%;
+}
